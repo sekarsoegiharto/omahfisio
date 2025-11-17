@@ -525,39 +525,38 @@ def load_css():
     """, unsafe_allow_html=True)
 
 
-    # hide_github_logo = """
-    #     <style>
-    #         #MainMenu {display: none !important;}
-    #         footer {display: none !important;}
-    #         .stDeployButton {display: none;}
-    #         .viewerBadge_container__1QSob {display: none;}
-    #         .st-emotion-cache-1gulkj5 {display: none;}  /* GitHub corner link */
-    #         </style>
-    #     """
-    # st.markdown(hide_github_logo, unsafe_allow_html=True)
+    hide_github_logo = """
+        <style>
+            #MainMenu {display: none !important;}
+            footer {display: none !important;}
+            .stDeployButton {display: none;}
+            .viewerBadge_container__1QSob {display: none;}
+            .st-emotion-cache-1gulkj5 {display: none;}  /* GitHub corner link */
+            </style>
+        """
+    st.markdown(hide_github_logo, unsafe_allow_html=True)
 
-    # hide_streamlit_style = """
-    #     <style>
-    #     #MainMenu {visibility: hidden;}
-    #     footer {visibility: hidden;}
-    #     .stDeployButton {display: none;}
-    #     .viewerBadge_container__1QSob {display: none;}
-    #     </style>
-    # """
-    # st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-    #     .stDeployButton {display: none;}
-    #     .viewerBadge_container__1QSob {display: none;}
-    #     .st-emotion-cache-1gulkj5 {display: none;}  /* GitHub logo */
+    hide_streamlit_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        .stDeployButton {display: none;}
+        .viewerBadge_container__1QSob {display: none;}
+        </style>
+    """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
     hide_all = """
         <style>
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
+        .stDeployButton {display: none;}
+        .viewerBadge_container__1QSob {display: none;}
+        .st-emotion-cache-1gulkj5 {display: none;}  /* GitHub logo */
         header {visibility: hidden;} /* hide Streamlit header */
         </style>
     """
     st.markdown(hide_all, unsafe_allow_html=True)
-
 
     # Navbar HTML
     st.markdown("""
