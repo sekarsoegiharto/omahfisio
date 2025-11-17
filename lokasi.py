@@ -76,3 +76,17 @@ def show():
             </div>
         </div>
     """, unsafe_allow_html=True)
+
+    # st.markdown("""
+    #     <hr style="border: none; border-top: 2px solid #D1A75E; margin-top: 60px;">
+    #     <div style="text-align: center; font-size: 15px; color: #5a4b3f; margin-top: 30px; font-family: 'Segoe UI', sans-serif;">
+    #         Punya pertanyaan? Tekan Booking Sekarang!
+    #         <br><br>
+    #         Follow kami di Instagram
+    #         <a href="https://www.instagram.com/omah.fisio" target="_blank" style="color: #D1A75E; text-decoration: none; font-weight: bold;">
+    #                 @omah.fisio
+    #         </a>
+    #         <br><br>
+    #         &copy; 2025 Omah Fisio. All rights reserved.
+    #     </div>
+    #     """, unsafe_allow_html=True)

@@ -1,14 +1,17 @@
 import streamlit as st
 from PIL import Image
-from style import load_css  # Jangan lupa panggil ini di main
+from style import load_css # Jangan lupa panggil ini di main
 from streamlit_autorefresh import st_autorefresh
-
+import base64
 
 def show():
-    load_css()  # Panggil fungsi CSS di awal
+    load_css() 
+    def get_base64_of_bin_file(bin_file):
+        with open(bin_file, 'rb') as f:
+            data = f.read()
+        return base64.b64encode(data).decode()
 
-    st.markdown("<div style='padding-top: 20px'></div>", unsafe_allow_html=True)
-    st.markdown("<div id='beranda'></div>", unsafe_allow_html=True)
+    st.markdown("<div id='beranda' style='margin-top: -150px;'></div>", unsafe_allow_html=True)
 
     # Hero Section
     col1, col2 = st.columns([2.1, 1])
@@ -17,12 +20,20 @@ def show():
         st.markdown("<div class='subtitle'>Kami hadir untuk bantu tingkatkan kualitas hidup Anda melalui terapi fisik profesional dan harga terjangkau.</div>", unsafe_allow_html=True)
         st.markdown("<a href='#testimoni' class='btn'>Pelajari Lebih Lanjut</a>", unsafe_allow_html=True)
     with col2:
-        st.markdown("<div class='logo-wrapper'>", unsafe_allow_html=True)
-        st.image("foto/logo-omahfisio.png", use_container_width=False, width=450)
-        st.markdown("</div>", unsafe_allow_html=True)
+        # st.markdown("<div class='logo-wrapper'>", unsafe_allow_html=True)
+        # st.image("foto/logo-omahfisio.png", use_container_width=False, width=450)
+        # st.markdown("</div>", unsafe_allow_html=True)
+        logo_base64 = get_base64_of_bin_file("foto/logo-omahfisio.png")
+
+        st.markdown(f"""
+        <div class="logo-wrapper">
+            <img src="data:image/png;base64,{logo_base64}" width="450" />
+        </div>
+        """, unsafe_allow_html=True)
+
 
     # Feature Box
-    st.markdown("<br><br>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
     feat1, feat2, feat3, feat4 = st.columns(4)
     with feat1:
         st.markdown("<div class='feature-box'><div class='feature-icon'>🙋🏻‍♀️</div><div class='feature-title'>5.000+<br>Klien Bahagia</div></div>", unsafe_allow_html=True)
@@ -65,8 +76,6 @@ def show():
                 </a>
             </div>
         """, unsafe_allow_html=True)
-
-    import base64
 
     # Fungsi konversi gambar ke base64
     def get_base64_of_bin_file(bin_file_path):
@@ -114,7 +123,7 @@ def show():
         col = col1 if idx % 2 == 0 else col2
         with col:
             st.markdown(f"""
-            <div style="background-color:#f6ece2; border-radius:15px; padding:20px; margin-bottom:25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <div style="background-color:#f6ece2; border-radius:15px; padding:0px; margin-bottom:25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
                 <div style="display:flex; align-items:center; gap:15px;">
                     <img src="{testi['foto']}" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid #D1B98C;">
                     <div style="font-size:18px;">⭐⭐⭐⭐⭐</div>

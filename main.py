@@ -1,6 +1,6 @@
 import streamlit as st
 from style import load_css
-import profil, layanan, fasilitas, lokasi, beranda
+import profil, layanan, fasilitas, lokasi, beranda, event
 
 st.set_page_config(page_title="Omah Fisio", layout="wide")
 load_css()
@@ -18,14 +18,18 @@ layanan.show()
 st.markdown('<div id="fasilitas"></div>', unsafe_allow_html=True)
 fasilitas.show()
 
+st.markdown('<div id="event"></div>', unsafe_allow_html=True)
+event.show()
+
 st.markdown('<div id="alamat"></div>', unsafe_allow_html=True)
 lokasi.show()
 
-# Footer
+# # Footer
 st.markdown("""
-    <hr style="border: none; border-top: 2px solid #D1A75E; margin-top: 60px;">
-
-    <div style="text-align: center; font-size: 15px; color: #5a4b3f; margin-top: 30px; font-family: 'Segoe UI', sans-serif;">
+    <hr style="border: none; border-top: 2px solid #D1A75E; margin-top: 100px;">
+    <div style="text-align: center; font-size: 15px; color: #5a4b3f; margin-top: 120px; font-family: 'Segoe UI', sans-serif;">
+        Punya pertanyaan? Tekan Booking Sekarang!
+        <br><br>
         Follow kami di Instagram
         <a href="https://www.instagram.com/omah.fisio" target="_blank" style="color: #D1A75E; text-decoration: none; font-weight: bold;">
                 @omah.fisio
