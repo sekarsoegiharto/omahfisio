@@ -545,18 +545,19 @@ def load_css():
     #     </style>
     # """
     # st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
-    # hide_all = """
-    #     <style>
-    #     #MainMenu {visibility: hidden;}
-    #     footer {visibility: hidden;}
     #     .stDeployButton {display: none;}
     #     .viewerBadge_container__1QSob {display: none;}
     #     .st-emotion-cache-1gulkj5 {display: none;}  /* GitHub logo */
-    #     header {visibility: hidden;} /* hide Streamlit header */
-    #     </style>
-    # """
-    # st.markdown(hide_all, unsafe_allow_html=True)
+
+    hide_all = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;} /* hide Streamlit header */
+        </style>
+    """
+    st.markdown(hide_all, unsafe_allow_html=True)
+
 
     # Navbar HTML
     st.markdown("""
